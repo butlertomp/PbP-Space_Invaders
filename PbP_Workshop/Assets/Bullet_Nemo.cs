@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Bullet_Nemo : MonoBehaviour {
 
-    float speed = 0.3f;
+    GameObject Player;
+
+
+    public float speed = 0.3f;
 
 	// Use this for initialization
 	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        Player = GameObject.Find("Player");
+
+        transform.position = Player.transform.position + new Vector3(0.0f, Player.transform.position.y + 3.5f, 0.0f);
+
+    }
+
+    // Update is called once per frame
+    void Update () {
 
         transform.position = new Vector3(transform.position.x, transform.position.y+speed);
 
